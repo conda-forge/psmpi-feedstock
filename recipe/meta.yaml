@@ -21,24 +21,24 @@ build:
 
 requirements:
   build:
-    - gcc_linux-64 >=10.3.0
-    - gxx_linux-64 >=10.3.0
-    - gfortran_linux-64 >=10.3.0
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - {{ compiler('fortran') }}
     - {{ stdlib("c") }}
+    - sysroot_linux-64 2.28
     - autoconf
     - automake
     - cmake
     - libtool
     - make
-    - sysroot_linux-64 >=2.28
   host:
     - libhwloc
     - libpmix-devel 
     - ucx
   run:
-    - gcc_linux-64 >=10.3.0
-    - gxx_linux-64 >=10.3.0
-    - gfortran_linux-64 >=10.3.0
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - {{ compiler('fortran') }}
     - libhwloc
     - libpmix
     - mpi 1.0.* psmpi
