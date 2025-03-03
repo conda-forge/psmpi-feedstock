@@ -14,7 +14,7 @@ source:
     folder: pscom
 
 build:
-  number: 5
+  number: 0
   run_exports:
     - {{ pin_subpackage('psmpi', max_pin='x.y') }}
   skip: true  # [win or osx]
