@@ -1,0 +1,4 @@
+c_stdlib:
+  - glibc
+c_stdlib_version:
+  - "2.28"
