@@ -1,5 +1,5 @@
-{% set version = "5.10.0" %}
-{% set pscom_version = "5.8.0" %}
+{% set version = "5.11.0" %}
+{% set pscom_version = "5.8.1" %}
 
 package:
   name: psmpi
@@ -7,10 +7,10 @@ package:
 
 source:
   - url: https://github.com/ParaStation/psmpi/archive/refs/tags/{{ version }}-1.tar.gz
-    sha256: c05a0281934dc54dc1178df997481a9be4b5b3cc7d5aa515f55d9f7df3f491dc
+    sha256: 8b937648bcbf3efb5935141d6974d8a1a7a5ef7777d47a3780b959672f9524a2
     folder: psmpi
   - url: https://github.com/ParaStation/pscom/archive/refs/tags/{{ pscom_version }}-1.tar.gz
-    sha256: e07759bf6efb99c15e9e2a77f32a27af71e0e0438813eaa589ab03d3d0683eca
+    sha256: 7e62f3c5cd440b3d4acccb4e491c25c02c2d430fa959960616b30e615b7920d7
     folder: pscom
 
 build:
