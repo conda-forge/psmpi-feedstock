@@ -7,7 +7,8 @@ unset FFLAGS F77 F90 F95
 export CC=$(basename "$CC")
 export CXX=$(basename "$CXX")
 export FC=$(basename "$FC")
-export CFLAGS="${CFLAGS} -std=c99"
+
+export CFLAGS="${CFLAGS} -std=c11"
 export CPPFLAGS="${CPPFLAGS} -I${PREFIX}/x86_64-conda-linux-gnu/sysroot/usr/include"
 export LDFLAGS="${LDFLAGS} -L${PREFIX}/x86_64-conda-linux-gnu/sysroot/lib"
 
