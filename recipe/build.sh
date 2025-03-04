@@ -29,8 +29,7 @@ cd build
     --enable-threading \
     CFLAGS="${CFLAGS}" \
     CPPFLAGS="${CPPFLAGS}" \
-    LDFLAGS="${LDFLAGS}" \
-    --enable-debuginfo
+    LDFLAGS="${LDFLAGS}" 
 
 make V=1 -j"${CPU_COUNT}"
 
