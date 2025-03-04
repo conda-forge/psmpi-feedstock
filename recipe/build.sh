@@ -9,7 +9,8 @@ export CXX=$(basename "$CXX")
 export FC=$(basename "$FC")
 
 export CFLAGS="${CFLAGS} -std=c11"
-export CPPFLAGS="${CPPFLAGS} -I${PREFIX}/x86_64-conda-linux-gnu/sysroot/usr/include"
+
+export CPPFLAGS="${CPPFLAGS} -I${PREFIX}/x86_64-conda-linux-gnu/sysroot/usr/include -D_POSIX_C_SOURCE=200809L"
 export LDFLAGS="${LDFLAGS} -L${PREFIX}/x86_64-conda-linux-gnu/sysroot/lib"
 
 cd $SRC_DIR/psmpi
