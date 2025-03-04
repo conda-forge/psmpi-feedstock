@@ -24,7 +24,7 @@ cd build
              --with-pmix=$PREFIX \
              --enable-msa-awareness \
              --enable-threading \
-	     --with-sysroot="${PREFIX}/x86_64-conda-linux-gnu/sysroot
+             --with-sysroot="${PREFIX}/x86_64-conda-linux-gnu/sysroot"
 
 make -j"${CPU_COUNT}"
 
