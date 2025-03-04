@@ -1,6 +1,0 @@
-c_stdlib:
-  linux-64:
-    - glibc
-c_stdlib_version:
-  linux-64:
-    - "2.28"
