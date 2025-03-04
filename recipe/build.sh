@@ -4,14 +4,12 @@ set -ex
 
 unset FFLAGS F77 F90 F95
 
-export CC=$(basename "$CC")
-export CXX=$(basename "$CXX")
-export FC=$(basename "$FC")
-
+export CC="${CC}"
+export CXX="${CXX}"
+export FC="${FC}"
 export CFLAGS="${CFLAGS} -std=c11"
-
-export CPPFLAGS="${CPPFLAGS} -I${PREFIX}/x86_64-conda-linux-gnu/sysroot/usr/include -D_POSIX_C_SOURCE=200809L"
-export LDFLAGS="${LDFLAGS} -L${PREFIX}/x86_64-conda-linux-gnu/sysroot/lib"
+export CPPFLAGS="${CPPFLAGS} -I/usr/include -D_POSIX_C_SOURCE=200809L"
+export LDFLAGS="${LDFLAGS} -L/usr/lib64"
 
 cd $SRC_DIR/psmpi
 
@@ -20,15 +18,20 @@ cd $SRC_DIR/psmpi
 mkdir -p build
 cd build
 
-../configure --prefix=$PREFIX \
-             --with-confset=gcc \
-             --enable-confset-overwrite \
-             --with-pscom-allin=$SRC_DIR/pscom \
-             --with-hwloc=$PREFIX \
-             --with-pmix=$PREFIX \
-             --enable-msa-awareness \
-             --enable-threading
+../configure \
+    --prefix="${PREFIX}" \
+    --with-confset=gcc \
+    --enable-confset-overwrite \
+    --with-pscom-allin="${SRC_DIR}/pscom" \
+    --with-hwloc="${PREFIX}" \
+    --with-pmix="${PREFIX}" \
+    --enable-msa-awareness \
+    --enable-threading \
+    CFLAGS="${CFLAGS}" \
+    CPPFLAGS="${CPPFLAGS}" \
+    LDFLAGS="${LDFLAGS}" \
+    --enable-debuginfo
 
-make -j"${CPU_COUNT}"
+make V=1 -j"${CPU_COUNT}"
 
-make install
+make V=1 install
