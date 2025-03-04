@@ -4,9 +4,10 @@ set -ex
 
 unset FFLAGS F77 F90 F95
 
-export CC=$(basename "$CC")
-export CXX=$(basename "$CXX")
-export FC=$(basename "$FC")
+export CC="${CC}"
+export CXX="${CXX}"
+export FC="${FC}"
+export CFLAGS="${CFLAGS} -std=c99"
 
 cd $SRC_DIR/psmpi
 
@@ -22,7 +23,8 @@ cd build
              --with-hwloc=$PREFIX \
              --with-pmix=$PREFIX \
              --enable-msa-awareness \
-             --enable-threading
+             --enable-threading \
+	     --with-sysroot="${PREFIX}/x86_64-conda-linux-gnu/sysroot
 
 make -j"${CPU_COUNT}"
 
