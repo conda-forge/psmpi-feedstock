@@ -14,16 +14,16 @@ source:
     folder: pscom
 
 build:
-  number: 6
+  number: 5
   run_exports:
     - {{ pin_subpackage('psmpi', max_pin='x.y') }}
   skip: true  # [win or osx]
 
 requirements:
   build:
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
-    - {{ compiler('fortran') }}
+    - gcc_linux-64 >=10.3.0
+    - gxx_linux-64 >=10.3.0
+    - gfortran_linux-64 >=10.3.0
     - {{ stdlib("c") }}
     - autoconf
     - automake
@@ -35,9 +35,9 @@ requirements:
     - libpmix-devel 
     - ucx
   run:
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
-    - {{ compiler('fortran') }}
+    - gcc_linux-64 >=10.3.0
+    - gxx_linux-64 >=10.3.0
+    - gfortran_linux-64 >=10.3.0
     - libhwloc
     - libpmix
     - mpi 1.0.* psmpi

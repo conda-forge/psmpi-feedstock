@@ -22,8 +22,7 @@ cd build
              --with-hwloc=$PREFIX \
              --with-pmix=$PREFIX \
              --enable-msa-awareness \
-             --enable-threading \
-	     --enable-psmalloc
+             --enable-threading
 
 make -j"${CPU_COUNT}"
 
