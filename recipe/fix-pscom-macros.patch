@@ -1,0 +1,22 @@
+--- ./lib/pscom/getid.c
++++ ./lib/pscom/getid.c
+@@ -32,8 +32,8 @@
+ 
+ static char vcid2[] __attribute__((unused)) = "$Id$";
+ 
+-#define MIN(a, b) (((a) < (b)) ? (a) : (b))
+-#define MAX(a, b) (((a) > (b)) ? (a) : (b))
++#define PSCOM_MIN(a, b) (((a) < (b)) ? (a) : (b))
++#define PSCOM_MAX(a, b) (((a) > (b)) ? (a) : (b))
+ 
+ static in_addr_t psp_hostip(char *name)
+ {
+@@ -110,7 +110,7 @@
+ 
+     if (ioctl(sfd, SIOCGIFCONF, &ifc) < 0) { goto error; }
+ 
+-    for (i = 0; i < MIN(IFREQCNT, ifc.ifc_len / sizeof(struct ifreq)); i++) {
++    for (i = 0; i < PSCOM_MIN(IFREQCNT, ifc.ifc_len / sizeof(struct ifreq)); i++) {
+         struct ifreq *req = &ifc.ifc_ifcu.ifcu_req[i];
+ 
+         /* Up ? */
