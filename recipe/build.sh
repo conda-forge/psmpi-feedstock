@@ -31,6 +31,7 @@ cd build
              --with-pmix=$PREFIX \
              --with-pmix-include=$PREFIX/include \
              --with-pmix-lib=$PREFIX/lib \
+             --enable-msa-awareness \
              --enable-threading
 
 make -j"${CPU_COUNT}"
