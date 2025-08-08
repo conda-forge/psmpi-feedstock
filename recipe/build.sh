@@ -2,6 +2,8 @@
 
 set -ex
 
+echo "Architecture: $(uname -m)" | tee -a $SRC_DIR/build.log
+
 unset FFLAGS F77 F90 F95
 
 export CC=$(basename "$CC")
@@ -34,6 +36,6 @@ cd build
              --enable-msa-awareness \
              --enable-threading
 
-make -j"${CPU_COUNT}"
+make -j2
 
 make install
