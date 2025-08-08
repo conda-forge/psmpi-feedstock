@@ -31,6 +31,6 @@ cd build
              --enable-msa-awareness \
              --enable-threading
 
-make V=1
+make -j"${CPU_COUNT}"
 
 make install
