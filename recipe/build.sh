@@ -2,6 +2,11 @@
 
 set -ex
 
+# Log CPU details
+echo "Checking CPU architecture..."
+lscpu | grep "Model name"
+cat /proc/cpuinfo | grep "model name" | uniq
+
 pkg-config --modversion pmix || echo "pkg-config for pmix failed"
 
 unset FFLAGS F77 F90 F95
@@ -28,7 +33,6 @@ cd build
              --with-pmix=$PREFIX \
              --with-pmix-include=$PREFIX/include \
              --with-pmix-lib=$PREFIX/lib \
-             --enable-msa-awareness \
              --enable-threading
 
 make -j"${CPU_COUNT}"
