@@ -2,21 +2,19 @@
 
 set -ex
 
-# Log CPU details
-echo "Checking CPU architecture..."
-lscpu | grep "Model name"
-cat /proc/cpuinfo | grep "model name" | uniq
-
-pkg-config --modversion pmix || echo "pkg-config for pmix failed"
-
 unset FFLAGS F77 F90 F95
 
 export CC=$(basename "$CC")
 export CXX=$(basename "$CXX")
 export FC=$(basename "$FC")
 
-export CFLAGS="$CFLAGS -I$CONDA_PREFIX/$HOST/sysroot/usr/include"
-export CPPFLAGS="$CPPFLAGS -I$CONDA_PREFIX/$HOST/sysroot/usr/include"
+if [[ "$HOST" == "aarch64-conda-linux-gnu" || "$CONDA_SUBDIR" == "linux-aarch64" ]]; then
+  export CFLAGS="$CFLAGS -I$CONDA_PREFIX/$HOST/sysroot/usr/include -O2 -march=armv8-a"
+  export CXXFLAGS="$CXXFLAGS -I$CONDA_PREFIX/$HOST/sysroot/usr/include -O2 -march=armv8-a"
+else
+  export CFLAGS="$CFLAGS -I$CONDA_PREFIX/$HOST/sysroot/usr/include -O2 -march=x86-64"
+  export CXXFLAGS="$CXXFLAGS -I$CONDA_PREFIX/$HOST/sysroot/usr/include -O2 -march=x86-64"
+fi
 
 cd $SRC_DIR/psmpi
 
