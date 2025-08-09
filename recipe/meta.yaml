@@ -27,8 +27,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}
-#   - {{ stdlib("c") }}
-    - sysroot_linux-aarch64 >=2.17
+    - {{ stdlib("c") }}
     - autoconf
     - automake
     - cmake
