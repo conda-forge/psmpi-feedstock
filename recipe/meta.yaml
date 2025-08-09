@@ -17,7 +17,7 @@ source:
       - fix-pscom-macros.patch
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage('psmpi', max_pin='x.y.z') }}
   skip: true  # [win or osx]
