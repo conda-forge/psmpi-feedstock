@@ -66,9 +66,9 @@ test:
     - test -f $PREFIX/lib/libmpi.so
     - test -f $PREFIX/bin/mpicc
     - test -f $PREFIX/bin/mpifort
-    - test -f $PREFIX/bin/mpiexec || test -f $PREFIX/bin/prterun 
+    - test -f $PREFIX/bin/mpiexec 
     - mpifort -o hello_world_mpi hello_world_mpi.f90
-    - $PREFIX/bin/mpiexec -np 2 ./hello_world_mpi
+    - export PATH=$PREFIX/bin:$PATH && mpiexec -np 2 ./hello_world_mpi
 
 about:
   home: https://github.com/ParaStation/psmpi
