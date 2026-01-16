@@ -35,8 +35,6 @@ requirements:
     - make
   host:
     - libhwloc
-    - libpmix-devel
-    - prrte
     - ucx
     - json-c
     - libcurl
@@ -47,7 +45,6 @@ requirements:
     - shs-cxi-drivers
   run:
     - libhwloc
-    - prrte
     - ucx
     - json-c
     - libcurl
@@ -68,7 +65,7 @@ test:
     - test -f $PREFIX/bin/mpifort
     - test -f $PREFIX/bin/mpiexec || test -f $PREFIX/bin/prterun 
     - mpifort -o hello_world_mpi hello_world_mpi.f90
-    - prterun --map-by :HWTCPUS:OVERSUBSCRIBE -np 2 ./hello_world_mpi || mpiexec -n 2 ./hello_world_mpi
+    - mpiexec -np 2 ./hello_world_mpi
 
 about:
   home: https://github.com/ParaStation/psmpi
@@ -85,21 +82,6 @@ about:
 
     To force the OFI netmod: `export MPICH_CH4_NETMOD=ofi` (or `ucx` for UCX).
     For Slingshot, use `FI_PROVIDER=cxi`.
-
-        Since it is configured with the Process Management Interface for Exascale (PMIx), an external job launcher
-    is required to run MPI jobs spawning multiple nodes, typically in a high-performance computing environment.
-
-    For instance using the Slurm Workload Manager, applications would be executed with:
-
-    ```
-    srun --mpi=pmix mpi_application
-    ```
-
-    For single-node jobs (here with 2 processes) use instead `prterun` :
-
-    ```
-    prterun -np 2 ./mpi_application"
-    ```
 
 extra:
   recipe-maintainers:
