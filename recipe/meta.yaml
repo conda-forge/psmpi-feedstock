@@ -33,7 +33,7 @@ requirements:
     - autoconf
     - automake
     - libtool
-    - libxcrypt
+    - libxcrypt1
     - make
     - perl
   host:
