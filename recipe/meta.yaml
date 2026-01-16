@@ -20,6 +20,7 @@ build:
   number: 2
   string: shs_h{{ PKG_HASH }}
   skip: true  # [win or osx]
+  binary_relocation: false
   run_exports:
     - {{ pin_subpackage('psmpi', max_pin='x.y.z') }}
 
@@ -33,6 +34,7 @@ requirements:
     - automake
     - libtool
     - make
+    - perl
   host:
     - libhwloc
     - ucx
