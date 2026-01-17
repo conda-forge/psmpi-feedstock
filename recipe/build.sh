@@ -61,6 +61,7 @@ cd build
              --with-hwloc="${PREFIX}" \
              --enable-threads=runtime \
 	     --with-pm=hydra \
+	     -with-pmi=pmi2 \
              --enable-romio \
              --enable-cxx \
              --enable-fast=all \
