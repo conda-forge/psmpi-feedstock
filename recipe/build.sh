@@ -60,9 +60,8 @@ cd build
              --with-libfabric="${PREFIX}" \
              --with-hwloc="${PREFIX}" \
              --enable-threads=runtime \
-             --with-pmix="${PREFIX}" \
-             --with-pmi=pmix \
              --with-pm=hydra \
+             --with-pmi=simple \
              --enable-romio \
              --enable-cxx \
              --enable-fast=all \

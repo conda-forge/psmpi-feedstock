@@ -40,7 +40,6 @@ requirements:
     - perl
   host:
     - libhwloc
-    - libpmix-devel
     - ucx
     - json-c
     - libcurl
