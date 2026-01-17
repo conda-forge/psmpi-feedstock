@@ -1,0 +1,20 @@
+--- a/mpich2/autogen.sh
++++ b/mpich2/autogen.sh
+@@ -572,14 +572,14 @@
+         _patch_libtool $_dir/confdb/ltmain.sh  intel-compiler.patch
+         _patch_libtool $_dir/confdb/ltmain.sh  nagfor.patch
+         _patch_libtool $_dir/confdb/libtool.m4 sys_lib_dlsearch_path_spec.patch
+-        _patch_libtool $_dir/confdb/libtool.m4 big-sur.patch
++#       _patch_libtool $_dir/confdb/libtool.m4 big-sur.patch
+         _patch_libtool $_dir/confdb/libtool.m4 hpc-sdk.patch
+         if test "$do_fortran" = "yes" ; then
+             _patch_libtool $_dir/confdb/libtool.m4 darwin-ifort.patch
+             _patch_libtool $_dir/confdb/libtool.m4 oracle-fort.patch
+             _patch_libtool $_dir/confdb/libtool.m4 flang.patch
+             _patch_libtool $_dir/confdb/libtool.m4 arm-compiler.patch
+-            _patch_libtool $_dir/confdb/libtool.m4 ibm-xlf.patch
++#           _patch_libtool $_dir/confdb/libtool.m4 ibm-xlf.patch
+         fi
+
+         if test "$_patch_successful" = "yes" ; then
+
