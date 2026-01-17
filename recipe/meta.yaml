@@ -70,7 +70,7 @@ test:
     - test -f $PREFIX/bin/mpifort
     - test -f $PREFIX/bin/mpiexec 
     - mpifort -o hello_world_mpi hello_world_mpi.f90
-    - export PATH=$PREFIX/bin:$PATH && mpiexec -np 2 ./hello_world_mpi
+    - export PATH=$PREFIX/bin:$PATH && export MPICH_CH4_NETMOD=ucx && mpiexec -np 2 ./hello_world_mpi
 
 about:
   home: https://github.com/ParaStation/psmpi
