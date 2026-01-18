@@ -1,5 +1,5 @@
 {% set psmpi_version = "4.3.2" %}
-{% set shs_libfabric_version = "2.2.0" %}
+{% set shs_libfabric_version = "2.4.0" %}
 
 package:
   name: psmpi
@@ -10,14 +10,15 @@ source:
     sha256: 52ce34df369622f283a6f54e2b70675f5b4870d64b54d0e96c3e6eb0818b7b35
     folder: psmpi
   - url: https://github.com/HewlettPackard/shs-libfabric/archive/refs/tags/v{{ shs_libfabric_version }}.tar.gz
-    sha256: 734aa46fc1a5c69c59514aade3e8f17037506fbb08013f4be63d669e546570b0
+#   sha256: 734aa46fc1a5c69c59514aade3e8f17037506fbb08013f4be63d669e546570b0  # 2.2.0
+    sha256: fd052fc7ab87a07f29696071c01243a04b66a7469ace3ff127bd2edabeb257f3  # 2.4.0
     folder: shs-libfabric
     patches:
       - fix_reallocarray.patch 
       - define_map_huge_shift.patch 
 
 build:
-  number: 1
+  number: 2
   string: shs_h{{ PKG_HASH }}
   skip: true  # [win or osx]
   run_exports:
