@@ -37,7 +37,7 @@ requirements:
   host:
     - libhwloc
     - libpmix-devel >=5.0,<6.0
-    - prrte >=5.0,<6.0
+    - prrte
     - ucx
     - json-c
     - libcurl
@@ -48,7 +48,7 @@ requirements:
     - shs-cxi-drivers
   run:
     - libhwloc
-    - prrte >=5.0,<6.0
+    - prrte
     - ucx
     - json-c
     - libcurl
