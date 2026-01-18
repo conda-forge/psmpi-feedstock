@@ -59,9 +59,6 @@ cd build
              --with-ucx="${PREFIX}" \
              --with-libfabric="${PREFIX}" \
              --with-hwloc="${PREFIX}" \
-             --with-pmix="${PREFIX}" \
-             --with-pmi=pmix \
-             --with-pm=none \
              --enable-threads=runtime \
              --enable-romio \
              --enable-cxx \
