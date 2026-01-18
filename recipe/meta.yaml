@@ -1,5 +1,6 @@
 {% set psmpi_version = "4.3.2" %}
 {% set shs_libfabric_version = "2.4.0" %}
+{% set build = 1 %}
 
 package:
   name: psmpi
@@ -18,8 +19,8 @@ source:
       - define_map_huge_shift.patch 
 
 build:
-  number: 2
-  string: shs_h{{ PKG_HASH }}
+  number: {{ build }}
+  string: shs_h{{ PKG_HASH }}_{{ build }}
   skip: true  # [win or osx]
   run_exports:
     - {{ pin_subpackage('psmpi', max_pin='x.y.z') }}
@@ -35,9 +36,9 @@ requirements:
     - libtool
     - make
   host:
-    - libhwloc
-    - libpmix-devel
-    - prrte
+    - libhwloc >=2.11.2,<2.12
+    - libpmix-devel >=5.0,<6.0
+    - prrte >=3.0,<4.0
     - ucx
     - json-c
     - libcurl
@@ -47,8 +48,8 @@ requirements:
     - shs-libcxi
     - shs-cxi-drivers
   run:
-    - libhwloc
-    - prrte
+    - libhwloc >=2.11.2,<2.12
+    - prrte >=3.0,<4.0
     - ucx
     - json-c
     - libcurl
