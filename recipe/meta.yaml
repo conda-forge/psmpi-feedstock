@@ -18,7 +18,7 @@ source:
       - define_map_huge_shift.patch 
 
 build:
-  number: 1
+  number: 2
   string: shs_h{{ PKG_HASH }}
   skip: true  # [win or osx]
   run_exports:
