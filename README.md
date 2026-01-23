@@ -1,11 +1,11 @@
-About psmpi-shs-feedstock
-=========================
+About psmpi-feedstock
+=====================
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/psmpi-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/ParaStation/psmpi
 
-Package license: Custom (MPICH permissive license)
+Package license: BSD-2-Clause OR GPL-2.0-only
 
 Summary: ParaStation MPI (vendor branch 4.3.2) with Slingshot support via shs-libfabric
 
@@ -76,53 +76,53 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-psmpi--shs-green.svg)](https://anaconda.org/conda-forge/psmpi-shs) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/psmpi-shs.svg)](https://anaconda.org/conda-forge/psmpi-shs) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/psmpi-shs.svg)](https://anaconda.org/conda-forge/psmpi-shs) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/psmpi-shs.svg)](https://anaconda.org/conda-forge/psmpi-shs) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-psmpi-green.svg)](https://anaconda.org/conda-forge/psmpi) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/psmpi.svg)](https://anaconda.org/conda-forge/psmpi) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/psmpi.svg)](https://anaconda.org/conda-forge/psmpi) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/psmpi.svg)](https://anaconda.org/conda-forge/psmpi) |
 
-Installing psmpi-shs
-====================
+Installing psmpi
+================
 
-Installing `psmpi-shs` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `psmpi` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `psmpi-shs` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `psmpi` can be installed with `conda`:
 
 ```
-conda install psmpi-shs
-```
-
-or with `mamba`:
-
-```
-mamba install psmpi-shs
-```
-
-It is possible to list all of the versions of `psmpi-shs` available on your platform with `conda`:
-
-```
-conda search psmpi-shs --channel conda-forge
+conda install psmpi
 ```
 
 or with `mamba`:
 
 ```
-mamba search psmpi-shs --channel conda-forge
+mamba install psmpi
+```
+
+It is possible to list all of the versions of `psmpi` available on your platform with `conda`:
+
+```
+conda search psmpi --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search psmpi --channel conda-forge
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search psmpi-shs --channel conda-forge
+mamba repoquery search psmpi --channel conda-forge
 
-# List packages depending on `psmpi-shs`:
-mamba repoquery whoneeds psmpi-shs --channel conda-forge
+# List packages depending on `psmpi`:
+mamba repoquery whoneeds psmpi --channel conda-forge
 
-# List dependencies of `psmpi-shs`:
-mamba repoquery depends psmpi-shs --channel conda-forge
+# List dependencies of `psmpi`:
+mamba repoquery depends psmpi --channel conda-forge
 ```
 
 
@@ -167,17 +167,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating psmpi-shs-feedstock
-============================
+Updating psmpi-feedstock
+========================
 
-If you would like to improve the psmpi-shs recipe or build a new
+If you would like to improve the psmpi recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/psmpi-shs-feedstock are
+Note that all branches in the conda-forge/psmpi-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks, and branches in the main repository should only be used to
 build distinct package versions.
