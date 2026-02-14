@@ -24,10 +24,8 @@ json_c:
 - '0.18'
 libcurl:
 - '8'
-libhwloc:
-- 2.12.2
 rdma_core:
-- '60'
+- '61'
 target_platform:
 - linux-64
 ucx:
