@@ -25,7 +25,7 @@ json_c:
 libcurl:
 - '8'
 rdma_core:
-- '61'
+- '63'
 target_platform:
 - linux-aarch64
 ucx:
