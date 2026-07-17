@@ -1,6 +1,6 @@
 {% set psmpi_version = "4.3.2" %}
 {% set shs_libfabric_version = "2.4.0" %}
-{% set build = 3 %}
+{% set build = 4 %}
 
 package:
   name: psmpi
